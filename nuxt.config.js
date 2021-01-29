@@ -6,6 +6,7 @@ export default {
     host: "0.0.0.0",
     port: 3000
   },
+  loading: "~/components/Loading.vue",
 
   head: {
     title: process.env.app_name,
@@ -25,12 +26,7 @@ export default {
   css: ["@/assets/scss/main.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    {
-      src: "~/plugins/vue-video-background",
-      ssr: false
-    }
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -62,6 +58,12 @@ export default {
     }
   },
 
+  bootstrapVue: {
+    icons: true
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+    transpile: ["gsap", "gsap/draggable", "gsap/scrolltrigger", "rellax"]
+  }
 };

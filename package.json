@@ -1,5 +1,5 @@
 {
-  "name": "Diggimark",
+  "name": "diggimark",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -11,14 +11,16 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/dotenv": "^1.4.1",
-    "@nuxtjs/pwa": "^3.3.4",
+    "@nuxtjs/pwa": "^3.3.5",
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.8.2",
+    "gsap": "^3.6.0",
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.12",
+    "rellax": "^1.12.1",
     "sass-loader": "^10.1.1",
-    "vue-responsive-video-background-player": "^1.2.2"
+    "scrolltrigger": "^1.0.1"
   },
   "devDependencies": {}
 }

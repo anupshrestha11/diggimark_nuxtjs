@@ -1,51 +1,28 @@
 <template>
-    <div>
-        <div class="loading" v-if="loading">
+    <div v-if="loading" class="loading-page">
+        <div class="loading">
             <div class="loader"></div>
-            <h1 class="text-uppercase text-center">Diggimark Nepal</h1>
+            <h1 class="text-uppercase">Diggimark Nepal</h1>
         </div>
-        <Header />
-
-        <div style="margin-bottom: 500px; z-index: 1">
-            <Nuxt />
-        </div>
-
-        <Footer />
     </div>
 </template>
+
 <script>
 export default {
-    data() {
-        return { loading: true, style: "" };
-    },
-    mounted() {
-        this.stopLoading();
-    },
+    data: () => ({
+        loading: false,
+    }),
     methods: {
-        stopLoading() {
-            if (this.loading) {
-                this.loading = false;
-            }
+        start() {
+            this.loading = true;
+        },
+        finish() {
+            this.loading = false;
         },
     },
-    head() {},
 };
 </script>
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    scroll-behavior: smooth;
-}
-body {
-    font-family: "Nunito Sans", sans-serif;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
-
 .loading {
     position: fixed;
     width: 100vw;
