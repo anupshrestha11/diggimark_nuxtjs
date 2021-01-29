@@ -10,16 +10,23 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import Section from "../components/Section.vue";
+// import { mapState } from "vuex";
 
 export default {
-    components: { Section },
-    async fetch({ store }) {
-        await store.dispatch("loadData");
-    },
-    computed: {
-        ...mapState(["data"]),
+    // async fetch({ store }) {
+    //     await store.dispatch("loadData");
+    // },
+    // computed: {
+    //     ...mapState(["data"]),
+    // },
+
+    asyncData() {
+        return {
+            data: {
+                name: "Diggimark Nepal ",
+                description: "Nepal's Leading IT Solution Company",
+            },
+        };
     },
 };
 </script>
