@@ -6,7 +6,7 @@
         </div>
         <Header />
 
-        <div style="margin-bottom: 500px; z-index: 1">
+        <div class="main" style="z-index: 1">
             <Nuxt />
         </div>
 
@@ -79,6 +79,15 @@ body {
         100% {
             transform: rotate(360deg);
         }
+    }
+}
+
+.main {
+    @media all and (min-width: 600px) {
+        margin-bottom: 600px;
+    }
+    @media all and (min-width: 1000px) {
+        margin-bottom: 400px;
     }
 }
 </style>
