@@ -24,22 +24,18 @@
                         </p>
                     </div>
                     <div class="btn__group">
-                        <b-button
-                            pill
-                            class="bg-white text-dark text-uppercase"
-                            tag="nuxt-link olw"
+                        <nuxt-link
+                            class="text-uppercase btn btn-light rounded-pill px-lg-5 py-lg-2"
                             to="#latest-work"
                         >
                             Our Latest Work
-                        </b-button>
-                        <b-button
-                            pill
-                            variant="primary"
-                            class="text-uppercase sat"
+                        </nuxt-link>
+                        <nuxt-link
+                            class="text-uppercase sat btn border-light rounded-pill text-white px-lg-5 py-lg-2 sap"
                             to="#"
                         >
                             Start A Project
-                        </b-button>
+                        </nuxt-link>
                     </div>
                 </div>
             </b-container>
@@ -133,6 +129,13 @@ export default {
             flex-direction: column;
             margin: 15px 0;
         }
+        a.sap {
+            transition: all 0.3s ease;
+            &:hover {
+                background-color: #fff;
+                color: #000 !important;
+            }
+        }
     }
     @media all and (min-width: 600px) {
         text-align: left;
@@ -169,6 +172,12 @@ export default {
             }
             & > p {
                 font-size: 1.5rem;
+            }
+        }
+        .btn__group {
+            a {
+                font-size: 1.2rem;
+                padding: 10px 15px;
             }
         }
     }

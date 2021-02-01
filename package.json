@@ -12,6 +12,7 @@
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.3.5",
+    "animejs": "^3.2.1",
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.8.2",
@@ -20,7 +21,8 @@
     "nuxt": "^2.14.12",
     "rellax": "^1.12.1",
     "sass-loader": "^10.1.1",
-    "scrolltrigger": "^1.0.1"
+    "scrolltrigger": "^1.0.1",
+    "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {}
 }

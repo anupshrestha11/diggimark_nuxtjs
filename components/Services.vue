@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="text-center text-uppercase pt-5 mt-5">Our Services</h2>
+        <h2 class="text-center text-uppercase pt-5 pb-4 mt-5">Our Services</h2>
         <b-row class="m-0 p-0">
             <b-col
                 md="6"

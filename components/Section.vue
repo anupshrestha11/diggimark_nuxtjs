@@ -3,6 +3,8 @@
         <Clients />
         <Services />
         <LatestWork />
+        <Testimonial />
+        <OurTeam />
         <LetsChat />
     </div>
 </template>

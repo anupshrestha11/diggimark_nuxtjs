@@ -1,15 +1,19 @@
 <template>
-    <div>
-        <h3 class="text-center text-uppercase pt-5 mt-5 ltw" id="latest-work">
+    <div class="py-5">
+        <h3
+            class="text-center text-uppercase pt-5 pb-4 mt-5 ltw"
+            id="latest-work"
+        >
             Work For Our Clients
         </h3>
         <b-container fluid>
-            <b-row>
+            <b-row class="grid">
                 <b-col
                     md="6"
                     lg="4"
                     xl="3"
-                    class="m-0 p-0 work__card"
+                    class="m-0 p-0 work__card filter-item"
+                    :data-category="work.category"
                     v-for="(work, idx) in works"
                     :key="idx"
                 >
@@ -23,6 +27,7 @@
 <script>
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+
 export default {
     data() {
         return {
@@ -30,26 +35,32 @@ export default {
                 {
                     title: "GTZ Online Shop",
                     tags: "Online Shop",
+                    category: "1",
                 },
                 {
                     title: "Travel 24 Website",
                     tags: "Web Desgin + Development",
+                    category: "2",
                 },
                 {
                     title: "Travel 24 Website",
                     tags: "Marketing, SEO",
+                    category: "3,4",
                 },
                 {
                     title: "Travel 24 Website",
                     tags: "Online Shop, Marketing, SEO",
+                    category: "1,3,4",
                 },
                 {
                     title: "Travel 24 Website",
                     tags: "SEO",
+                    category: "4",
                 },
                 {
                     title: "Travel 24 Website",
                     tags: "Marketing",
+                    category: "3",
                 },
             ],
         };

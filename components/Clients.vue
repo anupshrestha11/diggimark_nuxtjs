@@ -1,8 +1,8 @@
 <template>
     <b-container fluid class="bg-white text-center">
-        <h2 class="text-center pt-5 text-uppercase">Our Clients</h2>
+        <h2 class="text-center pt-5 pb-4 text-uppercase">Our Clients</h2>
         <b-container>
-            <p style="max-width: 500px" class="mx-auto">
+            <p style="max-width: 700px; font-size: 1.1rem" class="mx-auto pb-4">
                 Our Diggimark Nepal Company Has Elevated Some Of The Largest
                 Brands On The Planet, But We're Passionate About Growing Brands
                 Of All Sizes.
@@ -54,12 +54,6 @@ export default {
     width: 100px;
     @media all and (min-width: 600px) {
         width: 150px;
-    }
-    @media all and (min-width: 1200px) {
-        filter: grayscale(100%);
-        &:hover {
-            filter: grayscale(0);
-        }
     }
 }
 

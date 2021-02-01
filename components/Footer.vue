@@ -1,13 +1,13 @@
 <template>
-    <footer class="bg-dark text-white text-center text-uppercase pt-5">
+    <footer class="bg-dark text-white text-center pt-5">
         <b-container class="pt-lg-5">
             <b-row>
                 <b-col cols="12" md="6" lg="3" class="p-3">
                     <h5>CONTACT</h5>
-                    <p class="text-white-50 mb-0">Kaushaltar, Bhaktapur</p>
+                    <p class="mb-0">Kaushaltar, Bhaktapur</p>
                     <p>(+977) 98########</p>
                 </b-col>
-                <b-col cols="12" md="6" lg="3" class="p-3">
+                <b-col cols="12" md="6" lg="3" class="p-3 links text-uppercase">
                     <h5>BROwSE</h5>
                     <div class="py-1">
                         <b-button
@@ -42,14 +42,14 @@
                         >
                     </div>
                 </b-col>
-                <b-col cols="12" md="6" lg="3" class="p-3">
+                <b-col cols="12" md="6" lg="3" class="p-3 links text-uppercase">
                     <h5>SERVICES</h5>
                     <div class="py-1">
                         <b-button
                             variant="link"
                             class="m-0 p-0 text-muted"
                             to="#"
-                            >EXCLUSIV SEO</b-button
+                            >EXCLUSIVE SEO</b-button
                         >
                     </div>
                     <div class="py-1">
@@ -73,7 +73,7 @@
                             variant="link"
                             class="m-0 p-0 text-muted"
                             to="#"
-                            >DF</b-button
+                            >Brand + Identity</b-button
                         >
                     </div>
                 </b-col>
@@ -121,9 +121,17 @@ export default {};
 footer {
     width: 100vw;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url("/footer-background.jpg") no-repeat bottom;
     background-position: cover;
+
+    .links > div > .btn {
+        text-decoration: none;
+        transition: all 0.3s ease-in;
+        &:hover {
+            color: red !important;
+        }
+    }
 
     .bottom-footer {
         display: flex;
@@ -143,7 +151,7 @@ footer {
             color: #dad5d5;
             transition: all 0.3s ease-in;
             &:hover {
-                background: red;
+                background: rgb(196, 2, 2);
                 color: #fff;
             }
         }

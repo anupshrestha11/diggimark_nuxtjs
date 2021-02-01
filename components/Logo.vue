@@ -23,5 +23,8 @@ export default {
 svg {
     fill: #fff;
     width: 150px;
+    @media all and (min-width: 1000px) {
+        width: 200px !important;
+    }
 }
 </style>

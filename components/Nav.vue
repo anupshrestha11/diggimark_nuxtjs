@@ -1,19 +1,27 @@
 <template>
-    <client-only>
-        <b-navbar-nav class="ml-auto d-none d-sm-flex">
-            <b-nav-item class="main-link" to="/"> Home </b-nav-item>
-            <b-nav-item class="main-link" to="/work"> Work </b-nav-item>
-            <b-nav-item class="main-link" to="/blog"> Blog </b-nav-item>
-            <b-nav-item class="main-link" to="/career"> Career </b-nav-item>
-            <b-nav-item class="main-link" to="/Contact"> Contact </b-nav-item>
-            <b-nav-item class="main-link" to="/about"> About </b-nav-item>
-        </b-navbar-nav>
-    </client-only>
+    <b-navbar-nav class="ml-auto d-none d-sm-flex">
+        <b-nav-item class="main-link" to="/"> Home </b-nav-item>
+        <b-nav-item class="main-link" to="/work"> Work </b-nav-item>
+        <b-nav-item class="main-link" to="/blog"> Blog </b-nav-item>
+        <b-nav-item class="main-link" to="/career"> Career </b-nav-item>
+        <b-nav-item class="main-link" to="/Contact"> Contact </b-nav-item>
+        <b-nav-item class="main-link" to="/about"> About </b-nav-item>
+    </b-navbar-nav>
 </template>
 
 
 <script>
-export default {};
+import gsap from "gsap";
+export default {
+    mounted: () => {
+        gsap.from(".main-link", {
+            opacity: 0,
+            y: -100,
+            duration: 1,
+            stagger: 0.2,
+        });
+    },
+};
 </script>
 
 <style lang="scss" >
@@ -34,7 +42,7 @@ export default {};
             bottom: 50%;
             left: 0;
             transform: translateY(50%);
-            transition: all 0.3s ease-in;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         }
         &:hover {
             position: relative;
@@ -64,6 +72,10 @@ export default {};
                 }
             }
         }
+    }
+    @media all and (min-width: 1200px) {
+        font-size: 1.1rem;
+        margin: 0 1.5rem;
     }
 }
 .scrolled {
