@@ -61,5 +61,10 @@ export default {
     mounted: () => {
         var rellax = new Rellax(".rellax");
     },
+    head() {
+        return {
+            title: "About Us | Diggimark Nepal",
+        };
+    },
 };
 </script>

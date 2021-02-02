@@ -1,16 +1,21 @@
 <template>
-    <div class="mt-4 pt-4">
-        <b-container>
-            <h4>{{ error.statusCode }}</h4>
-            <h5>{{ error.message }}</h5>
-        </b-container>
-    </div>
+    <section>
+        <SmallHero
+            :title="error.statusCode + `<h1/> <h1> ` + error.message + `.`"
+            image="bg1.jpg"
+            height="100vh"
+        />
+        <LetsChat />
+    </section>
 </template>
 
 <script>
+import Section from "../components/Index/Section.vue";
 export default {
     props: ["error"],
 };
+
+Section;
 </script>
 
 <style>

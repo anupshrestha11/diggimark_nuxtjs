@@ -32,7 +32,7 @@
                         </nuxt-link>
                         <nuxt-link
                             class="text-uppercase sat btn border-light rounded-pill text-white px-lg-5 py-lg-2 sap"
-                            to="#"
+                            to="contact"
                         >
                             Start A Project
                         </nuxt-link>

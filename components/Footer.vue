@@ -12,40 +12,40 @@
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-white-50"
-                            to="#"
+                            class="m-0 p-0 text-white-50 shadow-none"
+                            to="work"
                             >Work</b-button
                         >
                     </div>
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-white-50"
-                            to="#"
+                            class="m-0 p-0 text-white-50 shadow-none"
+                            to="blog"
                             >Blog</b-button
                         >
                     </div>
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-white-50"
-                            to="#"
+                            class="m-0 p-0 text-white-50 shadow-none"
+                            to="contact"
                             >Contact</b-button
                         >
                     </div>
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-white-50"
-                            to="#"
+                            class="m-0 p-0 text-white-50 shadow-none"
+                            to="career"
                             >Careers</b-button
                         >
                     </div>
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-white-50"
-                            to="#"
+                            class="m-0 p-0 text-white-50 shadow-none"
+                            to="about"
                             >About</b-button
                         >
                     </div>

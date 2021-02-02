@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <nuxt-link
-            to="#"
+            to="contact"
             class="btn w-100 p-4 lc text-center text-uppercase m-0"
         >
             <div class="text-white h6" style="letter-spacing: 0.2rem">

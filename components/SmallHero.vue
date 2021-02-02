@@ -4,18 +4,19 @@
         :style="
             `background: linear-gradient(0deg, #00000050, #00000050),url('/` +
             image +
-            `') no-repeat 50% 30%; background-position: 50% 42%; background-size: cover;`
+            `') no-repeat 50% 30%; background-position: 50% 42%; background-size: cover; height:` +
+            height
         "
     >
         <div class="title text-center">
-            <h1 class="display-1">{{ title }}</h1>
+            <h1 class="display-1" v-html="title"></h1>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    props: ["title", "image"],
+    props: ["title", "image", "height"],
 };
 </script>
 
@@ -38,10 +39,11 @@ export default {
             color: #fff;
             text-transform: uppercase;
             text-shadow: 0 0 10px #000000;
+            letter-spacing: 0.1rem;
             @media all and (max-width: 1000px) {
-                font-size: 2.5rem;
+                font-size: 2.3rem !important;
             }
-            @media all and (max-width: 1000px) {
+            @media all and (max-width: 1200px) {
                 font-size: 3.5rem;
             }
         }
