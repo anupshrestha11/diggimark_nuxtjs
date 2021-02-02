@@ -1,6 +1,6 @@
 <template>
     <b-container fluid class="bg-white text-center">
-        <h2 class="text-center pt-5 pb-4 text-uppercase">Our Clients</h2>
+        <h2 class="text-center pt-5 pb-4 text-uppercase title">Our Clients</h2>
         <b-container>
             <p style="max-width: 700px; font-size: 1.1rem" class="mx-auto pb-4">
                 Our Diggimark Nepal Company Has Elevated Some Of The Largest
@@ -38,6 +38,7 @@ export default {
         gsap.to(".client-logo", {
             scrollTrigger: {
                 trigger: ".client-logo",
+                start: "top center",
                 toggleActions: "restart pause resume none",
             },
             opacity: 1,

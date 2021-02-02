@@ -7,7 +7,7 @@
             id="video"
             class="rellax"
             data-rellax-speed="-10"
-            poster="/s1.jpg"
+            poster="/p2.jpg"
         >
             <source src="/bg2.mp4" type="video/mp4" />
             <source src="/bg1.mp4" type="video/mp4" />
@@ -52,6 +52,7 @@ export default {
     mounted: function () {
         gsap.from("#title", { opacity: 0, duration: 2, x: -500 });
         gsap.from("#slogan", { opacity: 0, duration: 2, x: 500, delay: 1 });
+        gsap.from("#video", { opacity: 0, duration: 5 });
         gsap.from(".btn__group .btn", {
             opacity: 0,
             duration: 2,
@@ -69,6 +70,7 @@ export default {
     overflow: hidden;
     padding: 0;
     margin: 0;
+    background: #fff;
 }
 .klsdlf {
     background: linear-gradient(
@@ -83,16 +85,10 @@ export default {
 #video {
     width: 100%;
     min-height: 100vh;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
     padding: 0;
     margin: 0;
     object-fit: cover;

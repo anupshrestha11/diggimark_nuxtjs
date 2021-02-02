@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white pt-5">
+    <div class="bg-white pt-5" style="z-index: 1000000">
         <Clients />
         <Services />
         <LatestWork />

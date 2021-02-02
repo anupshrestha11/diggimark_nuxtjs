@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-5 pt-5">
+    <div class="">
         <nuxt-link
             to="#"
             class="btn w-100 p-4 lc text-center text-uppercase m-0"

@@ -1,6 +1,8 @@
 <template>
-    <div>
-        <h2 class="text-center text-uppercase pt-5 pb-4 mt-5">Our Services</h2>
+    <div id="services">
+        <h2 class="text-center text-uppercase pt-5 pb-4 mt-5 title">
+            Our Services
+        </h2>
         <b-row class="m-0 p-0">
             <b-col
                 md="6"
@@ -55,9 +57,18 @@ export default {
     },
     mounted: () => {
         gsap.registerPlugin(ScrollTrigger);
+        gsap.from("#services > .title", {
+            scrollTrigger: {
+                trigger: "#services > .title",
+            },
+            opacity: 0,
+            duration: 3,
+            x: "-100%",
+            ease: "back",
+        });
         gsap.from(".service__card", {
             scrollTrigger: {
-                trigger: ".service__card",
+                trigger: "#services > .title",
                 start: "top center",
             },
             opacity: 0,
@@ -70,10 +81,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h2 {
-    font-size: 2rem;
-    @media all and (min-width: 1200px) {
-        font-size: 2.5rem;
-    }
-}
 </style>

@@ -12,7 +12,7 @@
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-muted"
+                            class="m-0 p-0 text-white-50"
                             to="#"
                             >Work</b-button
                         >
@@ -20,7 +20,7 @@
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-muted"
+                            class="m-0 p-0 text-white-50"
                             to="#"
                             >Blog</b-button
                         >
@@ -28,7 +28,7 @@
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-muted"
+                            class="m-0 p-0 text-white-50"
                             to="#"
                             >Contact</b-button
                         >
@@ -36,9 +36,17 @@
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-muted"
+                            class="m-0 p-0 text-white-50"
                             to="#"
                             >Careers</b-button
+                        >
+                    </div>
+                    <div class="py-1">
+                        <b-button
+                            variant="link"
+                            class="m-0 p-0 text-white-50"
+                            to="#"
+                            >About</b-button
                         >
                     </div>
                 </b-col>
@@ -47,7 +55,7 @@
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-muted"
+                            class="m-0 p-0 text-white-50"
                             to="#"
                             >EXCLUSIVE SEO</b-button
                         >
@@ -55,7 +63,7 @@
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-muted"
+                            class="m-0 p-0 text-white-50"
                             to="#"
                             >WEB DESGIN + DEVELOPMENT</b-button
                         >
@@ -63,7 +71,7 @@
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-muted"
+                            class="m-0 p-0 text-white-50"
                             to="#"
                             >PAID MARKETING</b-button
                         >
@@ -71,7 +79,7 @@
                     <div class="py-1">
                         <b-button
                             variant="link"
-                            class="m-0 p-0 text-muted"
+                            class="m-0 p-0 text-white-50"
                             to="#"
                             >Brand + Identity</b-button
                         >

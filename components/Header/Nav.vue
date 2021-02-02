@@ -1,6 +1,7 @@
 <template>
     <b-navbar-nav class="ml-auto d-none d-sm-flex">
         <b-nav-item class="main-link" to="/"> Home </b-nav-item>
+        <b-nav-item class="main-link" to="/services"> Services </b-nav-item>
         <b-nav-item class="main-link" to="/work"> Work </b-nav-item>
         <b-nav-item class="main-link" to="/blog"> Blog </b-nav-item>
         <b-nav-item class="main-link" to="/career"> Career </b-nav-item>
