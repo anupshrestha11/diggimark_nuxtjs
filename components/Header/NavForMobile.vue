@@ -3,7 +3,33 @@
         <b-container class="mt-5 d-flex flex-column" style="height: 100%">
             <b-nav class="d-flex flex-column nav-mb w-100 mobile-nav">
                 <b-nav-item to="/"> Home </b-nav-item>
-                <b-nav-item to="/work"> Work </b-nav-item>
+                <b-nav-item
+                    >Service
+                    <div>
+                        <ul class="list-unstyled pl-4">
+                            <li>
+                                <nuxt-link to="#" style="font-size: 1rem">
+                                    Exclusive Seo
+                                </nuxt-link>
+                            </li>
+                            <li>
+                                <nuxt-link to="#" style="font-size: 1rem">
+                                    Paid Marketing
+                                </nuxt-link>
+                            </li>
+                            <li>
+                                <nuxt-link to="#" style="font-size: 1rem">
+                                    Web Design + Marketing
+                                </nuxt-link>
+                            </li>
+                            <li>
+                                <nuxt-link to="#" style="font-size: 1rem">
+                                    Exclusive Seo
+                                </nuxt-link>
+                            </li>
+                        </ul>
+                    </div>
+                </b-nav-item>
                 <b-nav-item to="/work"> Blog</b-nav-item>
                 <b-nav-item to="/career"> Career </b-nav-item>
                 <b-nav-item to="/about"> About </b-nav-item>
@@ -14,7 +40,7 @@
                 variant="light"
                 class="shadow text-uppercase w-100 my-auto text-dark"
                 style="letter-spacing: 0.1rem"
-                to="/"
+                to="/contact"
                 >Start a Project</b-button
             >
         </b-container>

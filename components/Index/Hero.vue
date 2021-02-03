@@ -7,7 +7,7 @@
             id="video"
             class="rellax"
             data-rellax-speed="-10"
-            poster="/p2.jpg"
+            poster="/p2.png"
         >
             <source src="/bg2.mp4" type="video/mp4" />
             <source src="/bg1.mp4" type="video/mp4" />
