@@ -9,14 +9,7 @@
                 </b-col>
                 <b-col cols="12" md="6" lg="3" class="p-3 links text-uppercase">
                     <h5>BROwSE</h5>
-                    <div class="py-1">
-                        <b-button
-                            variant="link"
-                            class="m-0 p-0 text-white-50 shadow-none"
-                            to="work"
-                            >Work</b-button
-                        >
-                    </div>
+
                     <div class="py-1">
                         <b-button
                             variant="link"

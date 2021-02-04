@@ -6,25 +6,32 @@
             <h2>Latest Posts</h2>
             <hr />
             <b-row>
-                <b-col cols="12" md="6" lg="4" v-for="i in 5" :key="i">
+                <b-col
+                    cols="12"
+                    md="6"
+                    lg="4"
+                    v-for="post in posts"
+                    :key="post.id"
+                >
                     <b-card
-                        title="New Changes on Technology"
-                        img-src="/s1.jpg"
+                        :title="post.title.rendered"
+                        :img-src="
+                            post.better_featured_image.media_details.sizes
+                                .medium_large.source_url
+                        "
                         img-alt="post image"
                         tag="article"
                         class="my-4"
                     >
-                        <b-card-text class="text-justify">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing
-                            elit. Eos delectus nobis omnis sed exercitationem
-                            inventore illo dignissimos voluptate iure iusto
-                            perspiciatis odit, optio distinctio quae asperiores!
-                            Vel corporis consectetur autem!
+                        <b-card-text
+                            class="text-justify"
+                            v-html="post.excerpt.rendered"
+                        >
                         </b-card-text>
                         <b-button
                             variant="link"
                             class="p-0 m-0 shadow-none"
-                            to="/blog/lksdn"
+                            :to="`/blog/` + post.slug"
                             >Read More...</b-button
                         >
                     </b-card>
@@ -37,11 +44,21 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
     head() {
         return {
-            title: "Blog | Diggimark Nepal",
+            title: this.data.head.title,
+            meta: this.data.head.meta,
         };
+    },
+
+    async fetch({ store }) {
+        await store.dispatch("loadData", { pageid: 23 });
+        await store.dispatch("loadPosts");
+    },
+    computed: {
+        ...mapState(["data", "posts"]),
     },
 };
 </script>

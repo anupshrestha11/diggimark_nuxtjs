@@ -5,31 +5,46 @@
                 <b-nav-item to="/"> Home </b-nav-item>
                 <b-nav-item
                     >Service
-                    <div>
-                        <ul class="list-unstyled pl-4">
-                            <li>
-                                <nuxt-link to="#" style="font-size: 1rem">
-                                    Exclusive Seo
-                                </nuxt-link>
-                            </li>
-                            <li>
-                                <nuxt-link to="#" style="font-size: 1rem">
-                                    Paid Marketing
-                                </nuxt-link>
-                            </li>
-                            <li>
-                                <nuxt-link to="#" style="font-size: 1rem">
-                                    Web Design + Marketing
-                                </nuxt-link>
-                            </li>
-                            <li>
-                                <nuxt-link to="#" style="font-size: 1rem">
-                                    Exclusive Seo
-                                </nuxt-link>
-                            </li>
-                        </ul>
-                    </div>
+                    <Client-only>
+                        <div>
+                            <ul class="list-unstyled pl-4">
+                                <li>
+                                    <nuxt-link
+                                        to="/services/test"
+                                        style="font-size: 1rem"
+                                    >
+                                        Exclusive Seo
+                                    </nuxt-link>
+                                </li>
+                                <li>
+                                    <nuxt-link
+                                        to="/services/test"
+                                        style="font-size: 1rem"
+                                    >
+                                        Paid Marketing
+                                    </nuxt-link>
+                                </li>
+                                <li>
+                                    <nuxt-link
+                                        to="/services/test"
+                                        style="font-size: 1rem"
+                                    >
+                                        Web Design + Marketing
+                                    </nuxt-link>
+                                </li>
+                                <li>
+                                    <nuxt-link
+                                        to="/services/test"
+                                        style="font-size: 1rem"
+                                    >
+                                        Exclusive Seo
+                                    </nuxt-link>
+                                </li>
+                            </ul>
+                        </div>
+                    </Client-only>
                 </b-nav-item>
+
                 <b-nav-item to="/work"> Blog</b-nav-item>
                 <b-nav-item to="/career"> Career </b-nav-item>
                 <b-nav-item to="/about"> About </b-nav-item>

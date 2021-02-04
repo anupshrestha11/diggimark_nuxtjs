@@ -12,34 +12,32 @@
             <source src="/bg2.mp4" type="video/mp4" />
             <source src="/bg1.mp4" type="video/mp4" />
         </video>
-        <transition name="custom">
-            <b-container fluid class="text-white content px-xl-5">
-                <div class="rellax" data-rellax-speed="-3">
-                    <div class="heading">
-                        <h1 class="text-uppercase display-4" id="title">
-                            {{ title }}
-                        </h1>
-                        <p class="" id="slogan">
-                            {{ description }}
-                        </p>
-                    </div>
-                    <div class="btn__group">
-                        <nuxt-link
-                            class="text-uppercase btn btn-light rounded-pill px-lg-5 py-lg-2"
-                            to="#latest-work"
-                        >
-                            Our Latest Work
-                        </nuxt-link>
-                        <nuxt-link
-                            class="text-uppercase sat btn border-light rounded-pill text-white px-lg-5 py-lg-2 sap"
-                            to="contact"
-                        >
-                            Start A Project
-                        </nuxt-link>
-                    </div>
+        <b-container fluid class="text-white content px-xl-5">
+            <div class="rellax" data-rellax-speed="-3">
+                <div class="heading">
+                    <h1 class="text-uppercase display-4" id="title">
+                        {{ title }}
+                    </h1>
+                    <p class="" id="slogan">
+                        {{ description }}
+                    </p>
                 </div>
-            </b-container>
-        </transition>
+                <div class="btn__group">
+                    <nuxt-link
+                        class="text-uppercase btn btn-light rounded-pill px-lg-5 py-lg-2"
+                        to="#latest-work"
+                    >
+                        Our Latest Work
+                    </nuxt-link>
+                    <nuxt-link
+                        class="text-uppercase sat btn border-light rounded-pill text-white px-lg-5 py-lg-2 sap"
+                        to="contact"
+                    >
+                        Start A Project
+                    </nuxt-link>
+                </div>
+            </div>
+        </b-container>
     </div>
 </template>
 

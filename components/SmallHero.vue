@@ -2,7 +2,7 @@
     <div
         class="hero"
         :style="
-            `background: linear-gradient(0deg, #00000050, #00000050),url('/` +
+            `background: linear-gradient(0deg, #00000050, #00000050),url('` +
             image +
             `') no-repeat 50% 30%; background-position: 50% 42%; background-size: cover; height:` +
             height

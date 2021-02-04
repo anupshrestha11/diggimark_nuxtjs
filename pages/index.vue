@@ -10,22 +10,20 @@
 </template>
 
 <script>
-// import { mapState } from "vuex";
+import { mapState } from "vuex";
 
 export default {
-    // async fetch({ store }) {
-    //     await store.dispatch("loadData");
-    // },
-    // computed: {
-    //     ...mapState(["data"]),
-    // },
+    async fetch({ store }) {
+        await store.dispatch("loadData", { pageid: 9 });
+    },
+    computed: {
+        ...mapState(["data"]),
+    },
 
-    asyncData() {
+    head() {
         return {
-            data: {
-                name: "Diggimark Nepal ",
-                description: "Nepal's Leading IT Solution Company",
-            },
+            title: this.data.head.title,
+            meta: this.data.head.meta,
         };
     },
 };
