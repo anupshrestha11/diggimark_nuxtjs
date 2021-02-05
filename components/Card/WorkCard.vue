@@ -6,9 +6,7 @@
         class="overflow-hidden m-2"
         overlay
     >
-        <b-button variant="link" id="work" class="shadow-none">
-            More Details
-        </b-button>
+        <b-button variant="link" class="shadow-none"> More Details </b-button>
         <div class="overlay">
             <svg
                 xmlns="http://www.w3.org/2000/svg"

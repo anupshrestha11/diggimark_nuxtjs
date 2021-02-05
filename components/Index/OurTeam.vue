@@ -15,7 +15,7 @@
                     "
                 />
                 <div class="text-center mt-2">
-                    <h4>Mr. Henry Kane</h4>
+                    <h5>Mr. Henry Kane</h5>
                     <em>CEO</em>
                 </div>
             </b-col>
@@ -32,7 +32,7 @@
                     "
                 />
                 <div class="text-center mt-2">
-                    <h4>Mr. Henry Kane</h4>
+                    <h5>Mr. Henry Kane</h5>
                     <em>CEO</em>
                 </div>
             </b-col>
@@ -49,7 +49,7 @@
                     "
                 />
                 <div class="text-center mt-2">
-                    <h4>Mr. Henry Kane</h4>
+                    <h5>Mr. Henry Kane</h5>
                     <em>CEO</em>
                 </div>
             </b-col>
