@@ -5,8 +5,8 @@
         </h2>
         <client-only>
             <VueSlickCarousel v-bind="slickOptions">
-                <div v-for="i in 5" :key="i">
-                    <TestimonialCard />
+                <div v-for="(testimonial, idx) in testimonials" :key="idx">
+                    <TestimonialCard :testimonial="testimonial" />
                 </div>
             </VueSlickCarousel>
         </client-only>
@@ -16,6 +16,8 @@
 <script>
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { mapState } from "vuex";
+
 export default {
     data() {
         return {
@@ -58,6 +60,9 @@ export default {
             x: 100,
             stagger: 0.2,
         });
+    },
+    computed: {
+        ...mapState(["testimonials"]),
     },
 };
 </script>

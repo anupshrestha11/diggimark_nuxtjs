@@ -28,29 +28,28 @@
         </div>
         <div class="text-center">
             <img
-                src="/person.jpg"
+                :src="testimonial.image.guid"
                 width="100px"
                 height="100px"
                 class=""
                 style="object-fit: cover; border-radius: 100%"
                 alt=""
             />
-            <h5 class="pt-3 pb-0 mb-0">John Doe</h5>
-            <p class="text-muted pt-0 mt-0">GTZ Enterprises, <em>CEO</em></p>
+            <h5 class="pt-3 pb-0 mb-0">{{ testimonial.person_name }}</h5>
+            <p class="text-muted pt-0 mt-0">
+                {{ testimonial.company }}, <em>{{ testimonial.position }}</em>
+            </p>
         </div>
         <p class="text-center">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus
-            sint molestiae sequi magni, quis praesentium rem eius magnam nobis
-            amet iste at illum officia quisquam beatae minus dignissimos est
-            numquam voluptate consequuntur qui debitis quos. Fugit ullam
-            laudantium, neque culpa, praesentium sed obcaecati ipsum magni porro
-            at facere
+            {{ testimonial.testiment }}
         </p>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    props: ["testimonial"],
+};
 </script>
 
 <style lang="scss" >

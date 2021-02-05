@@ -15,9 +15,10 @@ import { mapState } from "vuex";
 export default {
     async fetch({ store }) {
         await store.dispatch("loadData", { pageid: 9 });
+        await store.dispatch("loadTestimonials");
     },
     computed: {
-        ...mapState(["data"]),
+        ...mapState(["data", "testimonials"]),
     },
 
     head() {

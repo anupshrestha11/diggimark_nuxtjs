@@ -9,7 +9,8 @@ export const state = () => ({
   },
   isNavActive: false,
   posts: [],
-  post: ""
+  post: "",
+  testimonials: []
 });
 
 export const mutations = {
@@ -49,6 +50,10 @@ export const mutations = {
         };
       })
     };
+  },
+
+  set_testimonials(state, { testimonials }) {
+    state.testimonials = testimonials;
   }
 };
 
@@ -80,5 +85,11 @@ export const actions = {
     let response = await this.$axios.get("/wp/v2/posts?slug=" + slug);
     let post = response.data[0];
     commit("set_single_post", { post });
+  },
+
+  async loadTestimonials({ commit }) {
+    let response = await this.$axios.get("/wp/v2/testimonials");
+    let testimonials = response.data;
+    commit("set_testimonials", { testimonials });
   }
 };
