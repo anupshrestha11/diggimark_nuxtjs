@@ -11,14 +11,14 @@ export default {
   loading: "~/components/Loading.vue",
 
   head: {
-    title: process.env.app_name | "Diggimark Nepal",
+    title: process.env.app_name || "Diggimark Nepal",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: process.env.app_description | "Nepal best It Solution"
+        content: process.env.app_description || "Nepal best It Solution"
       }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
@@ -53,7 +53,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: process.env.app_baseurl | "https://api.diggimarknepal.com/wp-json"
+    baseURL: process.env.app_baseurl || "https://api.diggimarknepal.com/wp-json"
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
