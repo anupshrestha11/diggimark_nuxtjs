@@ -1,3 +1,4 @@
+require("dotenv").config();
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
 
@@ -10,14 +11,14 @@ export default {
   loading: "~/components/Loading.vue",
 
   head: {
-    title: "Diggimark Nepal",
+    title: process.env.app_name || "Diggimark Nepal",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: "Nepal best It Solution"
+        content: process.env.app_description || "Nepal best It Solution"
       }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
@@ -45,12 +46,14 @@ export default {
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
-    "@nuxtjs/pwa"
+    "@nuxtjs/pwa",
+
+    "@nuxtjs/dotenv"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: "https://api.diggimarknepal.com/wp-json"
+    baseURL: process.env.app_baseurl || "https://api.diggimarknepal.com/wp-json"
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

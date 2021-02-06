@@ -18,13 +18,7 @@ export const mutations = {
     state.data.name = name;
     state.data.description = description;
     state.data.head.title = head.title;
-    state.data.head.meta = head.meta.map(item => {
-      return {
-        hid: item[Object.keys(item)[0]],
-        name: item[Object.keys(item)[0]],
-        content: item[Object.keys(item)[1]]
-      };
-    });
+    state.data.head.meta = head.meta;
   },
   SET_NAVACTIVE(state) {
     state.isNavActive = !state.isNavActive;
@@ -39,16 +33,7 @@ export const mutations = {
     state.post = post;
     state.post.head = {
       title: post.yoast_title,
-      meta: post.yoast_meta.map(item => {
-        if (item[Object.keys(item)[0]] == "og:url") {
-          item.content = "https://www.diggimarknepal.com/blog/" + post.slug;
-        }
-        return {
-          hid: item[Object.keys(item)[0]],
-          name: item[Object.keys(item)[0]],
-          content: item[Object.keys(item)[1]]
-        };
-      })
+      meta: post.yoast_meta
     };
   },
 
