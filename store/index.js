@@ -10,7 +10,13 @@ export const state = () => ({
   isNavActive: false,
   posts: [],
   post: "",
-  testimonials: []
+  testimonials: [],
+  services: [],
+  service: {},
+  team: [],
+  projects: [],
+  project: {},
+  clients: []
 });
 
 export const mutations = {
@@ -36,9 +42,26 @@ export const mutations = {
       meta: post.yoast_meta
     };
   },
-
   set_testimonials(state, { testimonials }) {
     state.testimonials = testimonials;
+  },
+  set_services(state, { services }) {
+    state.services = services;
+  },
+  set_single_service(state, { service }) {
+    state.service = service;
+  },
+  set_team(state, { team }) {
+    state.team = team;
+  },
+  set_projects(state, { projects }) {
+    state.projects = projects;
+  },
+  set_project(state, { project }) {
+    state.project = project;
+  },
+  set_clients(state, { clients }) {
+    state.clients = clients;
   }
 };
 
@@ -60,7 +83,6 @@ export const actions = {
   disableNavActive({ commit }) {
     commit("disable_NavActive");
   },
-
   async loadPosts({ commit }) {
     let response = await this.$axios.get("/wp/v2/posts");
     let posts = response.data;
@@ -71,10 +93,40 @@ export const actions = {
     let post = response.data[0];
     commit("set_single_post", { post });
   },
-
   async loadTestimonials({ commit }) {
     let response = await this.$axios.get("/wp/v2/testimonials");
     let testimonials = response.data;
     commit("set_testimonials", { testimonials });
+  },
+
+  async loadServices({ commit }) {
+    let response = await this.$axios.get("/wp/v2/services");
+    let services = response.data;
+    commit("set_services", { services });
+  },
+  async loadSingleService({ commit }, { slug }) {
+    let response = await this.$axios.get("/wp/v2/services?slug=" + slug);
+    let service = response.dara[0];
+    commit("set_single_service", { service });
+  },
+  async loadTeam({ commit }) {
+    let response = await this.$axios.get("/wp/v2/team");
+    let team = response.data;
+    commit("set_team", { team });
+  },
+  async loadProjects({ commit }) {
+    let response = await this.$axios.get("/wp/v2/projects");
+    let projects = response.data;
+    commit("set_projects", { projects });
+  },
+  async loadSingleProject({ commit }, { slug }) {
+    let response = await this.$axios.get("/wp/v2/projects?slug=" + slug);
+    let project = response.data[0];
+    commit("set_project", { project });
+  },
+  async loadClients({ commit }) {
+    let response = await this.$axios.get("/wp/v2/clients");
+    let clients = response.data;
+    commit("set_clients", { clients });
   }
 };
