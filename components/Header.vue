@@ -20,8 +20,8 @@
                 :isActive="isNavActive"
                 :toggleActive="toggleActive"
             />
-            <Nav />
-            <NavForMobile :isActive="isNavActive" />
+            <Nav :services="services" />
+            <NavForMobile :isActive="isNavActive" :services="services" />
         </header>
     </b-navbar>
 </template>
@@ -37,6 +37,12 @@ export default {
             },
         };
     },
+    async fetch() {
+        await this.$store.dispatch("loadServices");
+    },
+    computed: {
+        ...mapState(["isNavActive", "services"]),
+    },
     mounted: function () {
         gsap.from("#logo", { opacity: 0, duration: 1, x: -300 });
         gsap.from(".burger ", {
@@ -45,9 +51,7 @@ export default {
             x: 300,
         });
     },
-    computed: {
-        ...mapState(["isNavActive"]),
-    },
+
     methods: {
         toggleActive() {
             this.$store.dispatch("changeNavActive");

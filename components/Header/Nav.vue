@@ -3,24 +3,11 @@
         <b-nav-item class="main-link" to="/"> Home </b-nav-item>
         <b-dropdown id="services" text="Services" class="main-link">
             <client-only>
-                <b-dropdown-item>
-                    <nuxt-link to="/service/test" class="service-item"
-                        >Exclusive SEO</nuxt-link
-                    >
-                </b-dropdown-item>
-                <b-dropdown-item>
-                    <nuxt-link to="/service/test" class="service-item"
-                        >Paid Marketing</nuxt-link
-                    >
-                </b-dropdown-item>
-                <b-dropdown-item>
-                    <nuxt-link to="/service/test" class="service-item"
-                        >Web Design + Development</nuxt-link
-                    >
-                </b-dropdown-item>
-                <b-dropdown-item>
-                    <nuxt-link to="/service/test" class="service-item"
-                        >SEO</nuxt-link
+                <b-dropdown-item v-for="(service, idx) in services" :key="idx">
+                    <nuxt-link
+                        :to="`/service/` + service.slug"
+                        class="service-item"
+                        >{{ service.title.rendered }}</nuxt-link
                     >
                 </b-dropdown-item>
             </client-only>
@@ -36,6 +23,7 @@
 <script>
 import gsap from "gsap";
 export default {
+    props: ["services"],
     data() {
         return {
             show: false,

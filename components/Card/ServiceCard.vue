@@ -1,28 +1,37 @@
 <template>
-    <div class="h-100 p-5 text-white servicecard">
-        <div class="overlay"></div>
-        <span class="num">{{ id }}</span>
-        <div class="d-flex flex-column h-100">
-            <h3 class="title text-uppercase">{{ title }}</h3>
-            <p class="text mt-auto mb-auto">{{ excert }}</p>
-            <nuxt-link to="#" class="h1">
-                <b-icon-arrow-right-circle></b-icon-arrow-right-circle>
-            </nuxt-link>
+    <nuxt-link :to="'/service/' + slug" class="">
+        <div
+            class="h-100 p-5 text-white servicecard"
+            :style="
+                `background: linear-gradient(0deg, #000000aa, #000000aa), url(&quot;` +
+                image +
+                `&quot;); background-position:center; background-repeat:no-repeat; background-size:cover`
+            "
+        >
+            <div class="overlay"></div>
+            <span class="num">{{ id }}</span>
+            <div class="d-flex flex-column h-100">
+                <h3 class="title text-uppercase">{{ title }}</h3>
+                <div class="text mt-auto mb-auto" v-html="excert"></div>
+                <nuxt-link :to="'/service/' + slug" class="h1">
+                    <b-icon-arrow-right-circle></b-icon-arrow-right-circle>
+                </nuxt-link>
+            </div>
         </div>
-    </div>
+    </nuxt-link>
 </template>
 
 <script>
 export default {
-    props: ["id", "title", "excert"],
+    props: ["id", "title", "excert", "image", "slug"],
 };
 </script>
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 .servicecard {
-    background: linear-gradient(0deg, #000000aa, #000000aa), url("/s1.jpg");
     background-size: cover;
+    background-position: center;
     position: relative;
     z-index: 1;
     overflow: hidden;

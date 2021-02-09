@@ -45,36 +45,17 @@
                 </b-col>
                 <b-col cols="12" md="6" lg="3" class="p-3 links text-uppercase">
                     <h5>SERVICES</h5>
-                    <div class="py-1">
+
+                    <div
+                        class="py-1"
+                        v-for="service in services"
+                        :key="service.id"
+                    >
                         <b-button
                             variant="link"
                             class="m-0 p-0 text-white-50"
-                            to="#"
-                            >EXCLUSIVE SEO</b-button
-                        >
-                    </div>
-                    <div class="py-1">
-                        <b-button
-                            variant="link"
-                            class="m-0 p-0 text-white-50"
-                            to="#"
-                            >WEB DESGIN + DEVELOPMENT</b-button
-                        >
-                    </div>
-                    <div class="py-1">
-                        <b-button
-                            variant="link"
-                            class="m-0 p-0 text-white-50"
-                            to="#"
-                            >PAID MARKETING</b-button
-                        >
-                    </div>
-                    <div class="py-1">
-                        <b-button
-                            variant="link"
-                            class="m-0 p-0 text-white-50"
-                            to="#"
-                            >Brand + Identity</b-button
+                            :to="`/service/` + service.slug"
+                            >{{ service.title.rendered }}</b-button
                         >
                     </div>
                 </b-col>
@@ -115,7 +96,12 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+    computed: {
+        ...mapState(["services"]),
+    },
+};
 </script>
 
 <style lang="scss">

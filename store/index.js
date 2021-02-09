@@ -106,7 +106,7 @@ export const actions = {
   },
   async loadSingleService({ commit }, { slug }) {
     let response = await this.$axios.get("/wp/v2/services?slug=" + slug);
-    let service = response.dara[0];
+    let service = response.data[0];
     commit("set_single_service", { service });
   },
   async loadTeam({ commit }) {
