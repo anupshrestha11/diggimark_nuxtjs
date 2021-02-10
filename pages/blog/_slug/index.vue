@@ -29,9 +29,25 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
+    async asyncData({ $axios, params, error }) {
+        try {
+            let response = await $axios.get("/wp/v2/posts?slug=" + params.slug);
+            let post = response.data[0];
+            if (!post) {
+                throw {
+                    statusCode: 404,
+                    message: "THIS PAGE COULD NOT BE FOUND",
+                };
+            }
+            return {
+                post,
+            };
+        } catch (e) {
+            error(e);
+        }
+    },
+
     mounted: () => {
         var d = document,
             s = d.createElement("script");
@@ -39,19 +55,10 @@ export default {
         s.setAttribute("data-timestamp", +new Date());
         (d.head || d.body).appendChild(s);
     },
-
-    async fetch({ store, params }) {
-        await store.dispatch("loadSinglePost", {
-            slug: params.slug,
-        });
-    },
-    computed: {
-        ...mapState(["post"]),
-    },
     head() {
         return {
-            title: this.post.head.title,
-            meta: [...this.post.head.meta],
+            title: this.post.yoast_title,
+            meta: [...this.post.yoast_meta],
         };
     },
 };

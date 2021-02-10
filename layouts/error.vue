@@ -2,7 +2,7 @@
     <section>
         <SmallHero
             :title="error.statusCode + `<h1/> <h1> ` + error.message + `.`"
-            image="bg1.jpg"
+            image="/bg1.jpg"
             height="100vh"
         />
         <LetsChat />

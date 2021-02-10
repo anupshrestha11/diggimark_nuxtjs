@@ -10,15 +10,6 @@
                     class="text-justify"
                     v-html="service.content.rendered"
                 ></div>
-
-                <!-- <b-row>
-                    <b-col cols="12">
-                        <h5 class="text-center">Some of Example Work</h5>
-                    </b-col>
-                    <b-col cols="12" md="6" lg="4" v-for="i in 5" :key="i">
-                        <WorkCard title="Diitial tesla" tags="SEO" />
-                    </b-col>
-                </b-row> -->
             </div>
         </b-container>
         <LetsChat />
@@ -26,15 +17,29 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 export default {
-    async fetch({ store, params }) {
-        await store.dispatch("loadSingleService", {
-            slug: params.slug,
-        });
+    async asyncData(context) {
+        try {
+            let response = await context.$axios.get(
+                "/wp/v2/services?slug=" + context.params.slug
+            );
+            let service = response.data[0];
+            if (!service) {
+                throw {
+                    statusCode: 404,
+                    message: "THIS PAGE COULD NOT BE FOUND",
+                };
+            }
+            return { service };
+        } catch (e) {
+            context.error(e);
+        }
     },
-    computed: {
-        ...mapState(["service"]),
+    head() {
+        return {
+            title: this.service.yoast_title,
+            meta: this.service.yoast_meta,
+        };
     },
 };
 </script>
