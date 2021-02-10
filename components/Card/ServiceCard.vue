@@ -1,23 +1,25 @@
 <template>
     <nuxt-link :to="'/service/' + slug" class="">
-        <div
-            class="h-100 p-5 text-white servicecard"
-            :style="
-                `background: linear-gradient(0deg, #000000aa, #000000aa), url(&quot;` +
-                image +
-                `&quot;); background-position:center; background-repeat:no-repeat; background-size:cover`
-            "
-        >
-            <div class="overlay"></div>
-            <span class="num">{{ id }}</span>
-            <div class="d-flex flex-column h-100">
-                <h3 class="title text-uppercase">{{ title }}</h3>
-                <div class="text mt-auto mb-auto" v-html="excert"></div>
-                <nuxt-link :to="'/service/' + slug" class="h1">
-                    <b-icon-arrow-right-circle></b-icon-arrow-right-circle>
-                </nuxt-link>
+        <client-only>
+            <div
+                class="h-100 p-5 text-white servicecard"
+                :style="
+                    `background: linear-gradient(0deg, #000000aa, #000000aa), url(&quot;` +
+                    image +
+                    `&quot;); background-position:center; background-repeat:no-repeat; background-size:cover`
+                "
+            >
+                <div class="overlay"></div>
+                <span class="num">{{ id }}</span>
+                <div class="d-flex flex-column h-100">
+                    <h3 class="title text-uppercase">{{ title }}</h3>
+                    <div class="text mt-auto mb-auto" v-html="excert"></div>
+                    <nuxt-link :to="'/service/' + slug" class="h1">
+                        <b-icon-arrow-right-circle></b-icon-arrow-right-circle>
+                    </nuxt-link>
+                </div>
             </div>
-        </div>
+        </client-only>
     </nuxt-link>
 </template>
 

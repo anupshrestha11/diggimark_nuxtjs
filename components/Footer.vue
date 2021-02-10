@@ -107,7 +107,6 @@ export default {
 <style lang="scss">
 footer {
     width: 100vw;
-
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url("/footer-background.jpg") no-repeat bottom;
     background-position: cover;
