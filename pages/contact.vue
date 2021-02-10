@@ -6,24 +6,34 @@
                 <h2 class="text-center text-uppercase title">
                     Give Us Some Details!
                 </h2>
-                <b-form @submit="onSubmit">
+                <div v-if="success" class="alert alert-success text-center">
+                    Great! Your message has been sent successfully. I will try
+                    to respond quickly.
+                </div>
+                <div v-if="errored" class="rounded bg-red-200 text-lg p-4">
+                    Bummer, Something went wrong. Did you fill out all of the
+                    fields?
+                </div>
+                <b-form @submit.prevent="submit">
                     <b-row>
                         <b-col md="6">
-                            <b-form-group label-for="fname">
+                            <b-form-group label-for="firstName">
                                 <b-form-input
-                                    id="fname"
+                                    id="firstName"
                                     type="text"
                                     placeholder="First Name"
+                                    v-model="firstName"
                                     required
                                 ></b-form-input>
                             </b-form-group>
                         </b-col>
                         <b-col md="6">
-                            <b-form-group label-for="lname">
+                            <b-form-group label-for="lastName">
                                 <b-form-input
-                                    id="lname"
+                                    id="lastName"
                                     type="text"
                                     placeholder="Last Name"
+                                    v-model="lastName"
                                     required
                                 ></b-form-input>
                             </b-form-group>
@@ -36,6 +46,7 @@
                                     id="email"
                                     type="email"
                                     placeholder="Email"
+                                    v-model="email"
                                     required
                                 ></b-form-input>
                             </b-form-group>
@@ -44,8 +55,9 @@
                             <b-form-group label-for="phone">
                                 <b-form-input
                                     id="phone"
-                                    type="number"
+                                    type="text"
                                     placeholder="Phone Number"
+                                    v-model="phone"
                                     required
                                 ></b-form-input>
                             </b-form-group>
@@ -53,11 +65,12 @@
                     </b-row>
                     <b-row>
                         <b-col md="6">
-                            <b-form-group label-for="cname">
+                            <b-form-group label-for="companyName">
                                 <b-form-input
-                                    id="caname"
+                                    id="companyName"
                                     type="text"
                                     placeholder="Company Name"
+                                    v-model="company"
                                     required
                                 ></b-form-input>
                             </b-form-group>
@@ -68,6 +81,7 @@
                                     id="website"
                                     type="text"
                                     placeholder="Website"
+                                    v-model="website"
                                     required
                                 ></b-form-input>
                             </b-form-group>
@@ -80,13 +94,16 @@
                                     id="whatsup"
                                     rows="10"
                                     placeholder="What's Up?"
+                                    v-model="message"
                                 ></b-form-textarea>
                             </b-form-group>
                         </b-col>
                     </b-row>
                     <div class="text-center">
-                        <b-button type="submit" variant="info" size="lg"
-                            >Send A Message</b-button
+                        <b-button type="submit" variant="info" size="lg">
+                            {{
+                                loading ? "Sending Message..." : "Submit"
+                            }}</b-button
                         >
                     </div>
                 </b-form>
@@ -124,12 +141,51 @@
 
 <script>
 export default {
-    methods: {
-        onSubmit() {},
+    data() {
+        return {
+            loading: false,
+            success: false,
+            errored: false,
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            company: "",
+            website: "",
+            message: "",
+        };
     },
+
+    methods: {
+        submit() {
+            this.loading = true;
+            var data = new FormData();
+            data.append("first-name", this.firstName);
+            data.append("last-name", this.lastName);
+            data.append("email", this.email);
+            data.append("message", this.message);
+            data.append("company-name", this.company);
+            data.append("website", this.website);
+            data.append("phone-number", this.phone);
+
+            this.$axios
+                .post("/contact-form-7/v1/contact-forms/12/feedback", data)
+                .then((response) => {
+                    this.success = true;
+                    this.errored = false;
+                })
+                .catch((error) => {
+                    this.errored = true;
+                })
+                .finally(() => {
+                    this.loading = false;
+                });
+        },
+    },
+
     head() {
         return {
-            title: "Contact Us | Diggimark Nepal",
+            title: "Contact Us - Diggimark Nepal",
         };
     },
 };

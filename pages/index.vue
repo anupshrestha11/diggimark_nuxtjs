@@ -16,6 +16,8 @@ export default {
     async fetch({ store }) {
         await store.dispatch("loadData", { pageid: 9 });
         await store.dispatch("loadTestimonials");
+        await store.dispatch("loadProjects");
+        await store.dispatch("loadClients");
     },
     computed: {
         ...mapState(["data", "testimonials"]),

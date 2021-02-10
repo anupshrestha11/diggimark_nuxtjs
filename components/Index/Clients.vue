@@ -9,12 +9,14 @@
             </p>
         </b-container>
         <b-container class="d-flex flex-wrap justify-content-around">
-            <div class="client-logo" style="opacity: 0">
-                <img src="/gtz.png" alt="" class="brand-image m-2" />
-            </div>
-            <div class="client-logo" style="opacity: 0">
+            <div
+                class="client-logo"
+                style="opacity: 0"
+                v-for="client in clients"
+                :key="client.id"
+            >
                 <img
-                    src="https://www.travel24.com.np/logo.png"
+                    :src="client.better_featured_image.source_url"
                     alt=""
                     class="brand-image m-2"
                 />
@@ -26,6 +28,7 @@
 <script>
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { mapState } from "vuex";
 export default {
     data() {
         return {
@@ -45,6 +48,9 @@ export default {
             duration: 4,
             stagger: 0.2,
         });
+    },
+    computed: {
+        ...mapState(["clients"]),
     },
 };
 </script>

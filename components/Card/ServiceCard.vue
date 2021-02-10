@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to="'/service/' + slug" class="">
+    <nuxt-link :to="'/service/' + slug" class="text-decoration-none">
         <client-only>
             <div
                 class="h-100 p-5 text-white servicecard"
@@ -12,7 +12,9 @@
                 <div class="overlay"></div>
                 <span class="num">{{ id }}</span>
                 <div class="d-flex flex-column h-100">
-                    <h3 class="title text-uppercase">{{ title }}</h3>
+                    <h3 class="title text-uppercase font-weight-bold">
+                        {{ title }}
+                    </h3>
                     <div class="text mt-auto mb-auto" v-html="excert"></div>
                     <nuxt-link :to="'/service/' + slug" class="h1">
                         <b-icon-arrow-right-circle></b-icon-arrow-right-circle>

@@ -13,11 +13,14 @@
                     lg="4"
                     xl="3"
                     class="m-0 p-0 work__card filter-item"
-                    :data-category="work.category"
-                    v-for="(work, idx) in works"
+                    v-for="(work, idx) in projects"
                     :key="idx"
                 >
-                    <WorkCard :title="work.title" :tags="work.tags" />
+                    <WorkCard
+                        :title="work.title.rendered"
+                        :tags="work.tags"
+                        :image="work.better_featured_image.source_url"
+                    />
                 </b-col>
             </b-row>
         </b-container>
@@ -27,44 +30,13 @@
 <script>
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { mapState } from "vuex";
 
 export default {
-    data() {
-        return {
-            works: [
-                {
-                    title: "GTZ Online Shop",
-                    tags: "Online Shop",
-                    category: "1",
-                },
-                {
-                    title: "Travel 24 Website",
-                    tags: "Web Desgin + Development",
-                    category: "2",
-                },
-                {
-                    title: "Travel 24 Website",
-                    tags: "Marketing, SEO",
-                    category: "3,4",
-                },
-                {
-                    title: "Travel 24 Website",
-                    tags: "Online Shop, Marketing, SEO",
-                    category: "1,3,4",
-                },
-                {
-                    title: "Travel 24 Website",
-                    tags: "SEO",
-                    category: "4",
-                },
-                {
-                    title: "Travel 24 Website",
-                    tags: "Marketing",
-                    category: "3",
-                },
-            ],
-        };
+    computed: {
+        ...mapState(["projects"]),
     },
+
     mounted: () => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.from(".work__card", {
