@@ -5,8 +5,14 @@
             <h2 class="text-center py-4">
                 We are looking for following positions
             </h2>
-            <div v-for="i in 5" :key="i" class="py-2">
-                <CareerCard />
+            <div v-for="career in careers" :key="career.id" class="py-2">
+                <CareerCard
+                    :title="career.title.rendered"
+                    :excerpt="career.excerpt.rendered"
+                    :slug="career.slug"
+                    :experience="career.experience"
+                    :no_of_seats="career.no_of_seats"
+                />
             </div>
         </b-container>
         <LetsChat />
@@ -15,9 +21,17 @@
 
 <script>
 export default {
+    async asyncData(context) {
+        let res = await context.$axios.get("/wp/v2/careers");
+        let careers = res.data;
+        return {
+            careers,
+        };
+    },
+
     head() {
         return {
-            title: "Career | Diggimark Nepal",
+            title: "Careers - Diggimark Nepal",
         };
     },
 };

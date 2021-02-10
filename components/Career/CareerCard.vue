@@ -1,19 +1,12 @@
 <template>
     <div>
-        <div class="custom-card border p-4">
-            <h3>Software Engineer</h3>
-            <p class="text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-                quis tempora voluptates, omnis ad fuga, sequi natus libero
-                sapiente magnam ipsa sint! Facilis vitae, omnis quam sit
-                debitis, aperiam commodi laborum, minima sapiente obcaecati quo?
-                Illum ducimus velit excepturi, ex sunt fugit, facere aliquid,
-                odit eligendi optio blanditiis reprehenderit quas. Ea, repellat
-                earum, quo quaerat illo recusandae, tempore officia velit
-                consequatur possimus explicabo laboriosam.
-            </p>
+        <div class="custom-card border p-4 shadow">
+            <h3>{{ title }}</h3>
+            <p>Experience : {{ experience }}</p>
+            <p>No. of seats : {{ no_of_seats }}</p>
+            <div class="text-justify" v-html="excerpt"></div>
             <div class="text-right">
-                <b-button variant="link" to="/career/lknds">
+                <b-button variant="link" :to="`/career/` + slug">
                     For More Details
                 </b-button>
             </div>
@@ -22,7 +15,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+    props: ["title", "excerpt", "slug", "experience", "no_of_seats"],
+};
 </script>
 
 <style>
