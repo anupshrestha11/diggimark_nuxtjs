@@ -56,9 +56,16 @@ export default {
         (d.head || d.body).appendChild(s);
     },
     head() {
+        let metas = this.post.yoast_meta.map((item) => {
+            if (item.property == "og:url") {
+                item.content = "https://diggimarknepal.com" + this.$route.path;
+            }
+            return item;
+        });
+
         return {
             title: this.post.yoast_title,
-            meta: [...this.post.yoast_meta],
+            meta: metas,
         };
     },
 };

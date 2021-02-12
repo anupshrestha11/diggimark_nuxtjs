@@ -22,9 +22,16 @@ export default {
         };
     },
     head() {
+        let metas = this.about.yoast_meta.map((item) => {
+            if (item.property == "og:url") {
+                item.content = "https://diggimarknepal.com" + this.$route.path;
+            }
+            return item;
+        });
+
         return {
             title: this.about.yoast_title,
-            meta: this.about.yoast_meta,
+            meta: metas,
         };
     },
 };

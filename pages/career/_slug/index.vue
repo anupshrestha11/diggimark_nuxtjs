@@ -60,9 +60,16 @@ export default {
         }
     },
     head() {
+        let metas = this.career.yoast_meta.map((item) => {
+            if (item.property == "og:url") {
+                item.content = "https://diggimarknepal.com" + this.$route.path;
+            }
+            return item;
+        });
+
         return {
             title: this.career.yoast_title,
-            meta: this.career.yoast_meta,
+            meta: metas,
         };
     },
 };

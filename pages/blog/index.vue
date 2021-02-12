@@ -61,9 +61,16 @@
 import { mapState } from "vuex";
 export default {
     head() {
+        let metas = this.data.head.meta.map((item) => {
+            if (item.property == "og:url") {
+                item.content = "https://diggimarknepal.com" + this.$route.path;
+            }
+            return item;
+        });
+
         return {
             title: this.data.head.title,
-            meta: this.data.head.meta,
+            meta: metas,
         };
     },
 

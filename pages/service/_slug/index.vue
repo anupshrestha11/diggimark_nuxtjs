@@ -36,9 +36,16 @@ export default {
         }
     },
     head() {
+        let metas = this.service.yoast_meta.map((item) => {
+            if (item.property == "og:url") {
+                item.content = "https://diggimarknepal.com" + this.$route.path;
+            }
+            return item;
+        });
+
         return {
             title: this.service.yoast_title,
-            meta: this.service.yoast_meta,
+            meta: metas,
         };
     },
 };
