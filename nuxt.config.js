@@ -21,7 +21,7 @@ export default {
         content: process.env.app_description || "Nepal best It Solution"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/logo.svg" }],
     script: [
       {
         hid: "threejs",

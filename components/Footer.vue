@@ -14,7 +14,7 @@
                         <b-button
                             variant="link"
                             class="m-0 p-0 text-white-50 shadow-none"
-                            to="blog"
+                            to="/blog"
                             >Blog</b-button
                         >
                     </div>
@@ -22,7 +22,7 @@
                         <b-button
                             variant="link"
                             class="m-0 p-0 text-white-50 shadow-none"
-                            to="contact"
+                            to="/contact"
                             >Contact</b-button
                         >
                     </div>
@@ -30,7 +30,7 @@
                         <b-button
                             variant="link"
                             class="m-0 p-0 text-white-50 shadow-none"
-                            to="career"
+                            to="/career"
                             >Careers</b-button
                         >
                     </div>
@@ -38,7 +38,7 @@
                         <b-button
                             variant="link"
                             class="m-0 p-0 text-white-50 shadow-none"
-                            to="about"
+                            to="/about"
                             >About</b-button
                         >
                     </div>
