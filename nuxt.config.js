@@ -21,7 +21,14 @@ export default {
         content: process.env.app_description || "Nepal best It Solution"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    script: [
+      {
+        hid: "threejs",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js",
+        defer: true
+      }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

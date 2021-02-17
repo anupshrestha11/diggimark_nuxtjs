@@ -27,7 +27,7 @@
             <div class="py-4 text-right">
                 <b-button
                     variant="success"
-                    :href="career.google_form"
+                    :to="career.google_form"
                     target="_blank"
                     >Apply Now</b-button
                 >

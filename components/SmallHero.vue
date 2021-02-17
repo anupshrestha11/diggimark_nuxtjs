@@ -7,16 +7,140 @@
             `') no-repeat 50% 30%; background-position: 50% 42%; background-size: cover; height:` +
             height
         "
+        :data-image="image"
     >
         <div class="title text-center">
             <h1 class="display-1" v-html="title"></h1>
         </div>
+        <div class="particle-wave"></div>
     </div>
 </template>
 
 <script>
 export default {
     props: ["title", "image", "height"],
+
+    mounted() {
+        if (document.querySelector("canvas")) {
+            document.querySelector("canvas").remove();
+        }
+        this.threejs();
+    },
+    unmounted() {},
+    methods: {
+        threejs() {
+            let SEPARATION = 40,
+                AMOUNTX = 130,
+                AMOUNTY = 35;
+
+            let container;
+            let camera,
+                scene,
+                renderer = null;
+
+            container = document.querySelector(".particle-wave");
+            let hero = document.querySelector(".hero");
+
+            let particles,
+                particle,
+                count = 0;
+
+            let windowHalfX = window.innerWidth / 2;
+            let windowHalfY = hero.offsetHeight / 2;
+
+            init();
+            animate();
+
+            function init() {
+                if (container) {
+                    container.className += container.className
+                        ? " waves"
+                        : "waves";
+
+                    console.log(container.className);
+                }
+
+                camera = new THREE.PerspectiveCamera(
+                    75,
+                    window.innerWidth / hero.offsetHeight,
+                    1,
+                    10000
+                );
+                camera.position.y = 150;
+                camera.position.z = 300;
+                camera.rotation.x = 0.1;
+
+                scene = new THREE.Scene();
+
+                particles = new Array();
+
+                let PI2 = Math.PI * 2;
+                let material = new THREE.SpriteCanvasMaterial({
+                    color: 0xffffff,
+                    program: function (context) {
+                        context.beginPath();
+                        context.arc(0, 0, 0.3, 0, PI2, true);
+                        context.fill();
+                    },
+                });
+
+                let i = 0;
+
+                for (let ix = 0; ix < AMOUNTX; ix++) {
+                    for (let iy = 0; iy < AMOUNTY; iy++) {
+                        particle = particles[i++] = new THREE.Sprite(material);
+                        particle.position.x =
+                            ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
+                        particle.position.z =
+                            iy * SEPARATION - (AMOUNTY * SEPARATION - 10);
+                        scene.add(particle);
+                    }
+                }
+
+                renderer = new THREE.CanvasRenderer({ alpha: true });
+                renderer.setSize(window.innerWidth, hero.offsetHeight);
+                renderer.setClearColor(0x000000, 0);
+                container.appendChild(renderer.domElement);
+                window.addEventListener("resize", onWindowResize, false);
+            }
+
+            function onWindowResize() {
+                windowHalfX = window.innerWidth / 2;
+                windowHalfY = hero.offsetHeight / 2;
+
+                camera.aspect = window.innerWidth / hero.offsetHeight;
+                camera.updateProjectionMatrix();
+
+                renderer.setSize(window.innerWidth, hero.offsetHeight);
+            }
+
+            function animate() {
+                requestAnimationFrame(animate);
+                render();
+            }
+
+            function render() {
+                let i = 0;
+
+                for (let ix = 0; ix < AMOUNTX; ix++) {
+                    for (let iy = 0; iy < AMOUNTY; iy++) {
+                        particle = particles[i++];
+                        particle.position.y =
+                            Math.sin((ix + count) * 0.5) * 20 +
+                            Math.sin((iy + count) * 0.5) * 20;
+                        particle.scale.x = particle.scale.y =
+                            (Math.sin((ix + count) * 0.3) + 2) * 4 +
+                            (Math.sin((iy + count) * 0.5) + 1) * 4;
+                    }
+                }
+
+                renderer.render(scene, camera);
+
+                // This increases or decreases speed
+                count += 0.2;
+            }
+        },
+    },
 };
 </script>
 
@@ -48,5 +172,11 @@ export default {
             }
         }
     }
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 </style>

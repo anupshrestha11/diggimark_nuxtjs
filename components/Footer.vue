@@ -62,16 +62,16 @@
                 <b-col cols="12" md="6" lg="3" class="p-3">
                     <h5>SOCIAL MEDIA</h5>
                     <div class="py-2 social-media">
-                        <a href="" class="m-1 btn">
+                        <a to="" class="m-1 btn">
                             <b-icon-facebook></b-icon-facebook>
                         </a>
-                        <a href="" class="m-1 btn">
+                        <a to="" class="m-1 btn">
                             <b-icon-instagram></b-icon-instagram>
                         </a>
-                        <a href="" class="m-1 btn">
+                        <a to="" class="m-1 btn">
                             <b-icon-twitter></b-icon-twitter>
                         </a>
-                        <a href="" class="m-1 btn">
+                        <a to="" class="m-1 btn">
                             <b-icon-linkedin></b-icon-linkedin>
                         </a>
                     </div>
