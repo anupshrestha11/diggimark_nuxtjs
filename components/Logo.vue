@@ -1,9 +1,9 @@
 <template>
   <div>
     <img
-      src="/logo.svg"
-      width="100"
-      class="img-fluid"
+      src="/icon.png"
+      width="60"
+      class="img-fluid logo"
       style="object-fit:cover"
     />
     <!-- <svg viewBox="0 0 378 51" :style="style">
@@ -33,6 +33,19 @@ svg {
   width: 150px;
   @media all and (min-width: 1000px) {
     width: 200px !important;
+  }
+}
+.logo {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  @media all and (min-width: 1200px) {
+    width: 55px;
+    height: 55px;
+  }
+  @media all and (min-width: 1600px) {
+    width: 60px;
+    height: 60px;
   }
 }
 </style>

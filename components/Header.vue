@@ -91,7 +91,7 @@ export default {
 header {
   transition: all 0.3s ease;
   &.scrolled {
-    background: #3a3985;
+    background: #fff;
     animation: show 0.4s ease-in;
     box-shadow: 0px 4px 10px 0 #00000045;
   }
