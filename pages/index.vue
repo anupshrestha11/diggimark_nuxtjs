@@ -25,6 +25,7 @@ export default {
 
   head() {
     let metas = this.data.head.meta.map(item => {
+      item.hid = item.name || item.property;
       if (item.property == "og:url") {
         item.content = "https://diggimarknepal.com" + this.$route.path;
       }
