@@ -127,7 +127,7 @@ export default {
     a.sap {
       transition: all 0.3s ease;
       &:hover {
-        background-color: var(--primaryColor);
+        background-color: var(--whiteColor);
         color: #000 !important;
       }
     }

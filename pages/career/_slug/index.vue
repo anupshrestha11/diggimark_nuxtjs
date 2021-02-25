@@ -2,7 +2,11 @@
   <section class="bg-white">
     <SmallHero
       :title="career.title.rendered"
-      :image="career.better_featured_image.source_url"
+      :image="[
+        career.better_featured_image !== null
+          ? career.better_featured_image.source_url
+          : `/bg1.jpg`
+      ]"
     />
     <b-container>
       <div class="py-4">
@@ -45,6 +49,7 @@ export default {
           message: "THIS PAGE COULD NOT BE FOUND"
         };
       }
+
       return {
         career
       };
@@ -54,6 +59,7 @@ export default {
   },
   head() {
     let metas = this.career.yoast_meta.map(item => {
+      item.hid = item.property;
       if (item.property == "og:url") {
         item.content = "https://diggimarknepal.com" + this.$route.path;
       }

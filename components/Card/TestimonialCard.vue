@@ -50,6 +50,7 @@ export default {
   margin: 10px;
   border-radius: 20px;
   transition: all 0.3s ease;
+  height: 450px;
   &:hover {
     box-shadow: 0 0 12px 0 #00000040;
     .quotation {

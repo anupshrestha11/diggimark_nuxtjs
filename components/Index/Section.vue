@@ -1,17 +1,16 @@
 <template>
-    <div class="bg-white pt-5" style="z-index: 1000000">
-        <Clients />
-        <Services />
-        <LatestWork />
-        <Testimonial />
-        <OurTeam />
-        <LetsChat />
-    </div>
+  <div class="bg-white pt-5" style="z-index: 1000000">
+    <Clients />
+    <Services />
+    <LatestWork />
+    <Testimonial />
+    <OurTeam />
+    <LetsChat />
+  </div>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style>
-</style>
+<style></style>
