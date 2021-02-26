@@ -49,7 +49,6 @@ export default {
           message: "THIS PAGE COULD NOT BE FOUND"
         };
       }
-
       return {
         career
       };
@@ -58,12 +57,13 @@ export default {
     }
   },
   head() {
-    let metas = this.career.yoast_meta.map(item => {
-      item.hid = item.property;
+    let metas = [];
+    this.career.yoast_meta.forEach(item => {
+      item.hid = item.property || item.name;
       if (item.property == "og:url") {
         item.content = "https://diggimarknepal.com" + this.$route.path;
       }
-      return item;
+      metas.push(item);
     });
 
     return {

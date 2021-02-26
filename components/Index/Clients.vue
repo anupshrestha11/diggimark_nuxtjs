@@ -9,7 +9,7 @@
     </b-container>
     <b-container class="d-flex flex-wrap justify-content-around">
       <div
-        class="client-logo"
+        class="client-logo d-flex"
         style="opacity: 0"
         v-for="client in clients"
         :key="client.id"
@@ -17,7 +17,7 @@
         <img
           :src="client.better_featured_image.source_url"
           alt=""
-          class="brand-image m-2"
+          class="brand-image m-2 mt-auto mb-auto"
         />
       </div>
     </b-container>

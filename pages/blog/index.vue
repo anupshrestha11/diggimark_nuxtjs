@@ -14,12 +14,12 @@
             >
               <b-card
                 :title="post.title.rendered"
-                :img-src="[
+                :img-src="
                   post.better_featured_image !== null
                     ? post.better_featured_image.media_details.sizes
                         .medium_large.source_url
-                    : `/bg1.jpg`
-                ]"
+                    : ''
+                "
                 img-alt="post image"
                 tag="article"
                 class="my-4"
@@ -58,11 +58,13 @@
 import { mapState } from "vuex";
 export default {
   head() {
-    let metas = this.data.head.meta.map(item => {
+    let metas = [];
+    this.data.head.meta.forEach(item => {
+      item.hid = item.property || item.name;
       if (item.property == "og:url") {
         item.content = "https://diggimarknepal.com" + this.$route.path;
       }
-      return item;
+      metas.push(item);
     });
 
     return {

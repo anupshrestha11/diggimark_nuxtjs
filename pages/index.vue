@@ -24,12 +24,13 @@ export default {
   },
 
   head() {
-    let metas = this.data.head.meta.map(item => {
+    let metas = [];
+    this.data.head.meta.forEach(item => {
       item.hid = item.name || item.property;
       if (item.property == "og:url") {
         item.content = "https://diggimarknepal.com" + this.$route.path;
       }
-      return item;
+      metas.push(item);
     });
 
     return {

@@ -49,14 +49,14 @@ import gsap from "gsap";
 export default {
   props: ["title", "description"],
   mounted: function() {
-    gsap.from("#title", { opacity: 0, duration: 2, x: -500 });
-    gsap.from("#slogan", { opacity: 0, duration: 2, x: 500, delay: 1 });
+    gsap.from("#title", { opacity: 0, duration: 2, y: -100 });
+    gsap.from("#slogan", { opacity: 0, duration: 2, y: 30 });
     gsap.from("#video", { opacity: 0, duration: 5 });
     gsap.from(".btn__group .btn", {
       opacity: 0,
       duration: 2,
-      delay: 1,
-      stagger: 0.3
+      y: 20,
+      stagger: 0.4
     });
     var rellax = new Rellax(".rellax");
   }

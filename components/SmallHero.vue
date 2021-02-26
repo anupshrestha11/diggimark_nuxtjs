@@ -18,13 +18,7 @@
 
 <script>
 export default {
-  props: {
-    title: {
-      type: String
-    },
-    image: { type: String, default: "/bg1.jpg" },
-    height: {}
-  },
+  props: ["title", "image", "height"],
 
   data() {
     return {

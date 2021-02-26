@@ -60,11 +60,13 @@ export default {
     (d.head || d.body).appendChild(s);
   },
   head() {
-    let metas = this.post.yoast_meta.map(item => {
+    let metas = [];
+    this.post.yoast_meta.forEach(item => {
+      item.hid = item.property || item.name;
       if (item.property == "og:url") {
         item.content = "https://diggimarknepal.com" + this.$route.path;
       }
-      return item;
+      metas.push(item);
     });
 
     return {

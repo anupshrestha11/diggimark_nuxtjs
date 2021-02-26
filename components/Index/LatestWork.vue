@@ -16,11 +16,11 @@
           <WorkCard
             :title="work.title.rendered"
             :tags="work.tags"
-            :image="[
+            :image="
               work.better_featured_image !== null
                 ? work.better_featured_image.source_url
                 : `/bg1.jpg`
-            ]"
+            "
           />
         </b-col>
       </b-row>

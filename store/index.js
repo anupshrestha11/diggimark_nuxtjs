@@ -112,6 +112,9 @@ export const actions = {
   async loadTeam({ commit }) {
     let response = await this.$axios.get("/wp/v2/team");
     let team = response.data;
+
+    team = team.reverse();
+
     commit("set_team", { team });
   },
   async loadProjects({ commit }) {

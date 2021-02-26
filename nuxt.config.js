@@ -81,18 +81,5 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ["gsap", "gsap/draggable", "gsap/scrolltrigger", "rellax"],
-    extractCSS: true,
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: "styles",
-            test: /\.(css|vue)$/,
-            chunks: "all",
-            enforce: true
-          }
-        }
-      }
-    }
   }
 };
