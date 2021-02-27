@@ -5,7 +5,8 @@
         <b-col cols="12" md="6" lg="3" class="p-3">
           <h5>CONTACT</h5>
           <p class="mb-0">Kaushaltar, Bhaktapur</p>
-          <p>(+977) 98########</p>
+          <p>9841590460, 9841715261</p>
+          <p>info@diggimarknepal.com</p>
         </b-col>
         <b-col cols="12" md="6" lg="3" class="p-3 links text-uppercase">
           <h5>BROwSE</h5>

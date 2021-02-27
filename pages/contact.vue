@@ -114,7 +114,7 @@
               <u> Diggimark Nepal </u>
             </h3>
             <p class="p-1 m-0 h4">Kaushaltar, Bhaktapur</p>
-            <p class="p-1 m-0 h4">984#######</p>
+            <p class="p-1 m-0 h4">9841590460, 9841715261</p>
             <p class="p-1 m-0 h4">info@diggimarknepal.com</p>
           </div>
         </b-col>
