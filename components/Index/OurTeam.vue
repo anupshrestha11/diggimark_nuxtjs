@@ -63,6 +63,10 @@ export default {
       stagger: 0.2
     });
     gsap.from(".mbr > .title", {
+      scrollTrigger: {
+        trigger: ".mbr",
+        start: "top center"
+      },
       duration: 1,
       opacity: 0,
       delay: 2,
@@ -95,9 +99,18 @@ export default {
   padding: 20px 10px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+  @media all and (min-width: 1000px) {
+    padding: 20px 50px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
   @media all and (min-width: 1200px) {
     padding: 20px 50px;
-
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  @media all and (min-width: 1600px) {
+    padding: 20px 50px;
     grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
   }
 }

@@ -1,4 +1,6 @@
 require("dotenv").config();
+
+const axios = require("axios");
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
 
@@ -21,14 +23,18 @@ export default {
         content: process.env.app_description || "Nepal best It Solution"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
-    // script: [
-    //   {
-    //     hid: "threejs",
-    //     src: "https://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js",
-    //     defer: true
-    //   }
-    // ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    script: [
+      {
+        hid: "threejs",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js",
+        defer: true
+      }
+    ]
+  },
+
+  generate: {
+    fallback: "404.html"
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -55,8 +61,31 @@ export default {
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
 
-    "@nuxtjs/dotenv"
+    "@nuxtjs/dotenv",
+    "@nuxtjs/sitemap"
   ],
+
+  sitemap: {
+    hostname: "https://diggimarknepal.com",
+    routes: async () => {
+      let all = [];
+      let response1 = await axios.get(
+        "https://api.diggimarknepal.com/wp-json/wp/v2/posts"
+      );
+      let response2 = await axios.get(
+        "https://api.diggimarknepal.com/wp-json/wp/v2/services"
+      );
+      let response3 = await axios.get(
+        "https://api.diggimarknepal.com/wp-json/wp/v2/careers"
+      );
+      all = [
+        ...response1.data.map(post => "/blog/" + post.slug),
+        ...response2.data.map(post => "/service/" + post.slug),
+        ...response3.data.map(post => "/career/" + post.slug)
+      ];
+      return all;
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -80,6 +109,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ["gsap", "gsap/draggable", "gsap/scrolltrigger", "rellax"],
+    transpile: ["gsap", "gsap/draggable", "gsap/scrolltrigger", "rellax"]
   }
 };

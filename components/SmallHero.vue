@@ -30,7 +30,7 @@ export default {
     if (document.querySelector("canvas")) {
       document.querySelector("canvas").remove();
     }
-    // this.animationId = this.threejs();
+    this.animationId = this.threejs();
   },
   beforeDestroy() {
     // this.stopAnimation(this.animationId);

@@ -4,6 +4,7 @@
     <Services />
     <LatestWork />
     <Testimonial />
+    <Why />
     <OurTeam />
     <LetsChat />
   </div>
