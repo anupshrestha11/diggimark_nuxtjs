@@ -4,8 +4,11 @@
       to="/contact"
       class="btn w-100 p-4 lc text-center text-uppercase m-0"
     >
-      <div class="text-white h6 font-weight-bold" style="letter-spacing: 0.2rem">
-        got project for us?
+      <div
+        class="text-white h6 font-weight-bold"
+        style="letter-spacing: 0.2rem"
+      >
+        Action is foundational key to success
       </div>
       <div class="h1 text-white">
         <span>Let's Chat</span>

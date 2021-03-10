@@ -19,7 +19,7 @@
           <h1 class="text-uppercase display-4 font-weight-bolder" id="title">
             {{ title }}
           </h1>
-          <p class="" id="slogan">
+          <p class="" id="slogan" style="max-width:1200px">
             {{ description }}
           </p>
         </div>

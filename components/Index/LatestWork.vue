@@ -18,7 +18,8 @@
             :tags="work.tags"
             :image="
               work.better_featured_image !== null
-                ? work.better_featured_image.source_url
+                ? work.better_featured_image.media_details.sizes.medium
+                    .source_url
                 : `/bg1.jpg`
             "
           />

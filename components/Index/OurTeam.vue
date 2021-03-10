@@ -4,8 +4,17 @@
     <VueSlickCarousel v-bind="slickOptions" class="team-grid">
       <div class=" mbr " v-for="(member, idx) in team" :key="idx">
         <img
-          :src="member.better_featured_image.source_url"
+          :src="
+            member.better_featured_image.media_details.sizes.medium !== 'null'
+              ? member.better_featured_image.media_details.sizes.medium
+                  .source_url
+              : member.better_featured_image.source_url
+          "
+          width="300"
+          height="300"
           class="img-fluid mem-image"
+          loading="lazy"
+          :alt="member.title.rendered"
         />
         <div class="title">
           <h5>{{ member.title.rendered }}</h5>
@@ -98,20 +107,20 @@ export default {
 .team-grid {
   padding: 20px 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  // grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 
-  @media all and (min-width: 1000px) {
+  @media all and (min-width: 800px) {
     padding: 20px 50px;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
 
   @media all and (min-width: 1200px) {
     padding: 20px 50px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
   @media all and (min-width: 1600px) {
     padding: 20px 50px;
-    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
 }
 

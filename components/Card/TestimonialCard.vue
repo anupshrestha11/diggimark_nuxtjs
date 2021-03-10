@@ -25,7 +25,8 @@
         height="100px"
         class=""
         style="object-fit: cover; border-radius: 100%"
-        alt=""
+        :alt="testimonial.title.rendered"
+        loading="lazy"
       />
       <h5 class="pt-3 pb-0 mb-0">{{ testimonial.person_name }}</h5>
       <p class="text-muted pt-0 mt-0">

@@ -16,8 +16,12 @@
       >
         <img
           :src="client.better_featured_image.source_url"
-          alt=""
+          :alt="client.title.rendered"
+          width="200"
+          height="150"
           class="brand-image m-2 mt-auto mb-auto"
+          style="object-fit: contain"
+          loading="lazy"
         />
       </div>
     </b-container>

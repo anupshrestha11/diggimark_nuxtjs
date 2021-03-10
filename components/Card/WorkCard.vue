@@ -2,6 +2,9 @@
   <b-card
     :title="title"
     :img-src="image"
+    :image-alt="title"
+    image-width="200"
+    image-height="200"
     img-top
     class="overflow-hidden m-2"
     overlay
